@@ -1,0 +1,27 @@
+{
+  "name": "react-babel-reflux-tutorial-for-blog",
+  "version": "1.0.0",
+  "description": "react sample codes for react",
+  "main": "index.js",
+  "dependencies": {
+    "react-dom": "^15.4.2",
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.1.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-iwata/react-babel-reflux-tutorial-for-blog.git"
+  },
+  "author": "h-iwata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h-iwata/react-babel-reflux-tutorial-for-blog/issues"
+  },
+  "homepage": "https://github.com/h-iwata/react-babel-reflux-tutorial-for-blog#readme"
+}
