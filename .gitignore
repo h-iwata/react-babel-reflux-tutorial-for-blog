@@ -1,0 +1,7 @@
+.DS_Store
+app/js/config/AppConfig.js
+build/Release
+node_modules
+bower_components
+build
+styleguide/
