@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+'use strict';
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('hello-world')
-);
+import React         from 'react';
+import initParser    from './initParser.js';
+
+initParser();
