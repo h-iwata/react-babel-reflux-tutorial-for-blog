@@ -1,2 +1,7 @@
-const numbers = [1 , 2 , 3].map(n => n + 1);
-console.log(numbers)
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('hello-world')
+);
