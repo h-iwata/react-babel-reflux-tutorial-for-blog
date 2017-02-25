@@ -19,6 +19,11 @@ const config = {
     base: './app/sample-html/'
   },
 
+  styles: {
+    src: './app/styles/**/*.scss',
+    dest: './build/css/',
+  },
+
 };
 
 export default config;

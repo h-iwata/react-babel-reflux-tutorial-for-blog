@@ -9,5 +9,5 @@ gulp.task('dev:front', function(cb){
   return runSequence(
     'clean',
     ['browserify', 'copy:sampleHTML'],
-    'browserSync', cb);
+    'watch:front', cb);
 });
