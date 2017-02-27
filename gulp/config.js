@@ -24,6 +24,11 @@ const config = {
     dest: './build/css/',
   },
 
+  templates: {
+    component: './gulp/templates/EmptyComponent.js',
+    html: './gulp/templates/EmptyComponent.html'
+  },
+
 };
 
 export default config;

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-class ShowHelloWorldCounterButtonComponent extends React.Component {
+class EmptyComponent extends React.Component {
 
   static get propTypes() {
     return {
@@ -27,8 +27,8 @@ class ShowHelloWorldCounterButtonComponent extends React.Component {
 
   render() {
     return (
-      <div>ShowHelloWorldCounterButtonComponent</div>
+      <div>EmptyComponent</div>
     );
   }
 }
-export default ShowHelloWorldCounterButtonComponent;
+export default EmptyComponent;
