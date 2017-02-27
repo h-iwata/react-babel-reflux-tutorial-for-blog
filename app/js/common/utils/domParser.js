@@ -37,7 +37,7 @@ export default  Object.assign(parser, {
       this.registry.push(Component.refs.module);
 
       const componentName = node.getAttribute('data-react-component').match(/\.(.+)/);
-      const name = (componentName) ? componentName[1] : componentName;
+      const name = (componentName) ? componentName[1] : node.getAttribute('data-react-component');
       if (this.registryByName[name] === undefined) {
         this.registryByName[name] = [Component.refs.module]
       } else {

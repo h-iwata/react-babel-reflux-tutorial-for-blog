@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import parser from '../../common/utils/domParser'
 
 class ShowHelloWorldCounterButtonComponent extends React.Component {
 
@@ -18,16 +19,29 @@ class ShowHelloWorldCounterButtonComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      count: 0
+    }
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   componentDidMount(){
     this.setState({});
   }
 
+  handleOnClick() {
+    const component = parser.findComponentByName('HelloWorldComponet');
+    this.setState({
+      count: component.state.count
+    })
+  }
+
   render() {
     return (
-      <div>ShowHelloWorldCounterButtonComponent</div>
+      <div>
+        <button onClick={this.handleOnClick}>ShowHelloWorldCounterButtonComponent</button>
+        <p>{this.state.count}</p>
+      </div>
     );
   }
 }
