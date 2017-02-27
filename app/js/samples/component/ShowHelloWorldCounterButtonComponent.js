@@ -1,16 +1,17 @@
 import React from 'react';
+import parser from '../../common/utils/domParser'
 
 class ShowHelloWorldCounterButtonComponent extends React.Component {
 
   static get propTypes() {
     return {
-      message: React.PropTypes.string
+
     };
   }
 
   static get defaultProps() {
     return {
-      message: ''
+
     }
   }
 
@@ -22,14 +23,24 @@ class ShowHelloWorldCounterButtonComponent extends React.Component {
     this.handleOnClick = this.handleOnClick.bind(this);
   }
 
-  handleOnClick(event) {
+  componentDidMount(){
+    this.setState({});
+  }
+
+  handleOnClick() {
+    const component = parser.findComponentByName('HelloWorldComponet');
     this.setState({
-      count: ++this.state.count
+      count: component.state.count
     })
   }
 
   render() {
-    return <h1 onClick={this.handleOnClick}>{this.props.message}{'!'.repeat(this.state.count)}</h1>;
+    return (
+      <div>
+        <button onClick={this.handleOnClick}>ShowHelloWorldCounterButtonComponent</button>
+        <p>{this.state.count}</p>
+      </div>
+    );
   }
 }
 export default ShowHelloWorldCounterButtonComponent;
