@@ -8,7 +8,6 @@ import ShowHelloWorldCounterButtonComponent from './samples/component/ShowHelloW
 export default function ()
 {
   parser.register({
-    'HelloWorldComponet': HelloWorldComponet
     'HelloWorldComponet': HelloWorldComponet,
     'ShowHelloWorldCounterButtonComponent': ShowHelloWorldCounterButtonComponent,
   });
