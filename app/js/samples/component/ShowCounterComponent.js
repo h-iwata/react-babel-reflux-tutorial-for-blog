@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CounterActions from '../actions/CounterActions';
 
 class ShowCounterComponent extends React.Component {
     render(){
@@ -11,15 +12,6 @@ class ShowCounterComponent extends React.Component {
         );
     };
 };
-
-class CounterActions {
-  static increase(num = 1) {
-      return {
-          type: "INC_COUNTER",
-          num
-      };
-  };
-}
 
 export default connect(
   state => {
