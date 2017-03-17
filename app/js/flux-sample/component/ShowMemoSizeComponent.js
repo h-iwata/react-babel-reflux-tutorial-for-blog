@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import MemoStore from '../objects/MemoStore';
+
 class ShowMemoSizeComponent extends React.Component {
 
   static get propTypes() {
@@ -21,15 +23,21 @@ class ShowMemoSizeComponent extends React.Component {
     this.state = {
       size: 0,
     }
+    this.onMemoChange = this.onMemoChange.bind(this);
   }
 
   componentDidMount(){
     this.setState({});
+    MemoStore.addChangeListener(this.onMemoChange);
   }
 
-  addMemo(memo) {
+  componentWillUnmount() {
+    MemoStore.removeChangeListener(this.onMemoChange);
+  }
+
+  onMemoChange(memos) {
     this.setState({
-      size: ++this.state.size
+      size: memos.length
     })
   }
 

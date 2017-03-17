@@ -3,8 +3,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import parser from '../../common/utils/domParser';
 import { Form, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+
+import MemoActionCreator from '../objects/MemoActionCreator';
 
 class AddMemoFormComponent extends React.Component {
 
@@ -33,8 +34,7 @@ class AddMemoFormComponent extends React.Component {
   }
 
   handleOnClick(event) {
-    parser.findComponentByName('Flux.ShowMemoListComponent').addMemo(ReactDOM.findDOMNode(this.textInput).value)
-    parser.findComponentByName('Flux.ShowMemoSizeComponent').addMemo(ReactDOM.findDOMNode(this.textInput).value)
+    MemoActionCreator.addMemo(ReactDOM.findDOMNode(this.textInput).value);
   }
 
   render() {

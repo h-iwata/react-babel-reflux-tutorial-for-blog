@@ -3,6 +3,8 @@
 import React from 'react';
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 
+import MemoStore from '../objects/MemoStore';
+
 class ShowMemoListComponent extends React.Component {
 
   static get propTypes() {
@@ -22,19 +24,21 @@ class ShowMemoListComponent extends React.Component {
     this.state = {
       memos: []
     }
+    this.onMemoChange = this.onMemoChange.bind(this);
   }
 
   componentDidMount(){
     this.setState({});
+    MemoStore.addChangeListener(this.onMemoChange);
   }
 
-  addMemo(memo){
-    if (memo === '') {
-      return;
-    }
-    this.state.memos.push(memo)
+  componentWillUnmount() {
+    MemoStore.removeChangeListener(this.onMemoChange);
+  }
+
+  onMemoChange(memos) {
     this.setState({
-      memos: this.state.memos
+      memos: memos
     })
   }
 
