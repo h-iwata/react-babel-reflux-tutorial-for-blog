@@ -19,21 +19,31 @@ class ShowMemoListComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      memos: []
+    }
   }
 
   componentDidMount(){
-    this.setState({
+    this.setState({});
+  }
 
-    });
+  addMemo(memo){
+    if (memo === '') {
+      return;
+    }
+    this.state.memos.push(memo)
+    this.setState({
+      memos: this.state.memos
+    })
   }
 
   render() {
     return (
       <ListGroup>
-        <ListGroupItem>Item 1</ListGroupItem>
-        <ListGroupItem>Item 2</ListGroupItem>
-        <ListGroupItem>...</ListGroupItem>
+        {this.state.memos.map((memo, index) => {
+          return <ListGroupItem key={index}>{memo}</ListGroupItem>
+        })}
       </ListGroup>
     );
   }
