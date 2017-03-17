@@ -8,6 +8,6 @@ gulp.task('dev:front', function(cb){
   global.isProd = false;
   return runSequence(
     'clean',
-    ['browserify', 'copy:sampleHTML'],
+    ['sass', 'browserify', 'copy:sampleHTML'],
     'watch:front', cb);
 });
