@@ -8,6 +8,7 @@ import ShowHelloWorldCounterButtonComponent from './samples/component/ShowHelloW
 // flux samples
 import Flux_AddMemoButtonComponent from './flux-sample/component/AddMemoFormComponent';
 import Flux_ShowMemoListComponent from './flux-sample/component/ShowMemoListComponent';
+import Flux_ShowMemoSizeComponent from './flux-sample/component/ShowMemoSizeComponent';
 
 export default function ()
 {
@@ -16,6 +17,7 @@ export default function ()
     'ShowHelloWorldCounterButtonComponent': ShowHelloWorldCounterButtonComponent,
     'Flux.AddMemoFormComponent': Flux_AddMemoButtonComponent,
     'Flux.ShowMemoListComponent': Flux_ShowMemoListComponent,
+    'Flux.ShowMemoSizeComponent': Flux_ShowMemoSizeComponent,
   });
   parser.parse(document.getElementsByTagName("BODY")[0]);
 }

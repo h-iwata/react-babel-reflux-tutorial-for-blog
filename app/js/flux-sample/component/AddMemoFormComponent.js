@@ -34,6 +34,7 @@ class AddMemoFormComponent extends React.Component {
 
   handleOnClick(event) {
     parser.findComponentByName('Flux.ShowMemoListComponent').addMemo(ReactDOM.findDOMNode(this.textInput).value)
+    parser.findComponentByName('Flux.ShowMemoSizeComponent').addMemo(ReactDOM.findDOMNode(this.textInput).value)
   }
 
   render() {
