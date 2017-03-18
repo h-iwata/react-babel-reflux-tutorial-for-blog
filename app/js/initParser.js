@@ -9,6 +9,10 @@ import ShowHelloWorldCounterButtonComponent from './samples/component/ShowHelloW
 import Flux_AddMemoButtonComponent from './flux-sample/component/AddMemoFormComponent';
 import Flux_ShowMemoListComponent from './flux-sample/component/ShowMemoListComponent';
 import Flux_ShowMemoSizeComponent from './flux-sample/component/ShowMemoSizeComponent';
+// reflux samples
+import Reflux_AddMemoButtonComponent from './reflux-sample/component/AddMemoFormComponent';
+import Reflux_ShowMemoListComponent from './reflux-sample/component/ShowMemoListComponent';
+import Reflux_ShowMemoSizeComponent from './reflux-sample/component/ShowMemoSizeComponent';
 
 export default function ()
 {
@@ -18,6 +22,9 @@ export default function ()
     'Flux.AddMemoFormComponent': Flux_AddMemoButtonComponent,
     'Flux.ShowMemoListComponent': Flux_ShowMemoListComponent,
     'Flux.ShowMemoSizeComponent': Flux_ShowMemoSizeComponent,
+    'Reflux.AddMemoFormComponent': Reflux_AddMemoButtonComponent,
+    'Reflux.ShowMemoListComponent': Reflux_ShowMemoListComponent,
+    'Reflux.ShowMemoSizeComponent': Reflux_ShowMemoSizeComponent,
   });
   parser.parse(document.getElementsByTagName("BODY")[0]);
 }
