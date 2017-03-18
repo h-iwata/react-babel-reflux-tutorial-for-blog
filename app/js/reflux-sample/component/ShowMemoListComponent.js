@@ -3,7 +3,9 @@
 import React from 'react';
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 
-//import MemoStore from '../objects/MemoStore';
+import ReactMixin from 'react-mixin';
+import Reflux from 'reflux';
+import MemoStore from '../stores/MemoStore';
 
 class ShowMemoListComponent extends React.Component {
 
@@ -24,19 +26,15 @@ class ShowMemoListComponent extends React.Component {
     this.state = {
       memos: []
     }
-    this.onMemoChange = this.onMemoChange.bind(this);
   }
 
   componentDidMount(){
-    this.setState({});
-    //MemoStore.addChangeListener(this.onMemoChange);
+    this.setState({
+
+    });
   }
 
-  componentWillUnmount() {
-    //MemoStore.removeChangeListener(this.onMemoChange);
-  }
-
-  onMemoChange(memos) {
+  onMemoChanged(memos) {
     this.setState({
       memos: memos
     })
@@ -52,4 +50,5 @@ class ShowMemoListComponent extends React.Component {
     );
   }
 }
+ReactMixin(ShowMemoListComponent.prototype, Reflux.listenTo(MemoStore, "onMemoChanged"));
 export default ShowMemoListComponent;

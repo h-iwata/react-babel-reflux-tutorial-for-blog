@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
-
-// import MemoStore from '../objects/MemoStore';
+import ReactMixin from 'react-mixin';
+import Reflux from 'reflux';
+import MemoStore from '../stores/MemoStore';
 
 class ShowMemoSizeComponent extends React.Component {
 
@@ -23,19 +24,13 @@ class ShowMemoSizeComponent extends React.Component {
     this.state = {
       size: 0,
     }
-    this.onMemoChange = this.onMemoChange.bind(this);
   }
 
   componentDidMount(){
     this.setState({});
-    //MemoStore.addChangeListener(this.onMemoChange);
   }
 
-  componentWillUnmount() {
-    //MemoStore.removeChangeListener(this.onMemoChange);
-  }
-
-  onMemoChange(memos) {
+  onMemoChanged(memos) {
     this.setState({
       size: memos.length
     })
@@ -47,4 +42,5 @@ class ShowMemoSizeComponent extends React.Component {
     );
   }
 }
+ReactMixin(ShowMemoSizeComponent.prototype, Reflux.listenTo(MemoStore, "onMemoChanged"));
 export default ShowMemoSizeComponent;

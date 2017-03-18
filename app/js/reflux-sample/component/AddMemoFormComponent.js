@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 import { Form, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 
-//import MemoActionCreator from '../objects/MemoActionCreator';
+import MemoActions from '../actions/MemoActions';
 
 class AddMemoFormComponent extends React.Component {
 
@@ -34,7 +34,7 @@ class AddMemoFormComponent extends React.Component {
   }
 
   handleOnClick(event) {
-    //MemoActionCreator.addMemo(ReactDOM.findDOMNode(this.textInput).value);
+    MemoActions.addMemo(ReactDOM.findDOMNode(this.textInput).value);
   }
 
   render() {
